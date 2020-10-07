@@ -1,0 +1,37 @@
+<div class="controls-holder">
+  <div class="controls">
+    <div class="left-controls-holder">
+      <div class="left-button-holder">
+        <div class="left-button-slider" [ngClass]="{'left-button-slider-open':openButtonSliders}">
+          <div class="control-button left-button" [ngClass]="{'button-disabled':leftButtonDisabled}" (click)="clickLeft()">
+            <svg class="svg-left-right-button" viewBox="0 0 30 60">
+              <polygon points="0,30 30,60 30,0" class="control-buttons" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="left-curly">&#x0007B;</div>
+    </div>
+
+    <div class="right-controls-holder">
+      <div class="right-button-holder">
+        <div class="right-button-slider" [ngClass]="{'right-button-slider-open':openButtonSliders}">
+          <div class="control-button right-button" [ngClass]="{'button-disabled':rightButtonDisabled}" (click)="clickRight()">
+            <svg class="svg-left-right-button" viewBox="0 0 30 60">
+              <polygon points="30,30 0,60 0,0" class="control-buttons"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="right-curly">&#x0007D;</div>
+    </div>
+    <!--
+    Forward
+    Back
+    Fast forward
+    Fast back
+    Play
+    Pause
+    -->
+  </div>
+</div>

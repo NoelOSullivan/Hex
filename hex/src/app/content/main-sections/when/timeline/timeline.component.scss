@@ -1,0 +1,65 @@
+@import "../../../../scss/_variables.scss";
+
+.timeline-holder {
+    position: relative;
+    width: calc(100vw - 10px) ;
+    height: calc(100vh - 214px);
+    //border: 1px solid black;
+    box-sizing: border-box;
+    margin: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.timeline-scroller {
+    position: absolute;
+    //width: auto;
+    //left: calc(-300% - 30px);
+    left: 0;
+    top: 0;
+    height: inherit;
+    box-sizing: border-box;
+    display: flex;
+    transition: left 250ms ease-in-out;
+}
+
+.timeline-scroller-no-animate {
+    transition: none;
+}
+
+.timeline-element {
+    border: 1px $primary-hover-color solid;
+    height: inherit;
+    width: calc(100vw - 10px) ;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+    flex-shrink: 0;
+    margin-right: 10px;
+
+    @media screen and (min-width: $timeline-break-small) {
+        width: calc(100vw / 2 - 10px) ;
+    }
+
+    @media screen and (min-width: $timeline-break-medium) {
+        width: calc(100vw / 3 - 10px) ;
+    }
+}
+
+.date {
+    font-size: 24px;
+    font-weight: 600;
+    background: $primary-background-color;
+    color: $primary-text-color;
+}
+
+.client {
+    font-size: 18px;
+}
+
+.projectDescription {
+    font-size: 14px;
+}
+
+.jobDescription {
+    font-size: 14px;
+}

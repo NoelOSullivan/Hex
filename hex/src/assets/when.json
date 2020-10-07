@@ -1,0 +1,53 @@
+{
+  "title": "WHEN",
+  "timeline-elements": [
+    {
+      "date": "Aug 2016 - present",
+      "client": "Airbus - Sopra Steria - Tech Valley",
+      "clientDescription": "They make aeroplanes, don't ya know",
+      "location":"Toulouse, France",
+      "projectTitle": "AirnavX - New-generation technical data management",
+      "projectDescription": "AirnavX is the latest version of a web application which allows the publication, verification, and the consultation of all the technical documentation for the full range of Airbus aircraft (+250 million documents).",
+      "jobTitle": "Senior Front End Developer",
+      "technos": "AngularJS, Sass, SVG, Eclipse(ughh!), Maven, HP Application Lifecycle Management, Git-svn, Continuous integration",
+      "jobDescription": "I have ownership of the svg reader which allows users to consult and manipulate technical drawings (SVG) via a search engine and a rich visual interface. I also have ownership of interfaces using complicated models, dealing with the monitoring of the publication process, the administration of user rights...",
+      "jobEnvironment": "Ever evolving needs in a fully agile process means lots of iterations, leading to frequent code/css changes within each module and regular refactoring"
+    },
+    {
+      "date": "Jan 2016 - Jul 2016",
+      "client": "Gamesys",
+      "clientDescription": "UK leader in the production of online gambling games",
+      "location": "London, UK",
+      "projectTitle": "Worldwide marketing services for all of the Gamesys brands",
+      "projectDescription": "Promotion of the different gaming platforms and casinos, notably via bespoke mini games",
+      "jobTitle": "Senior Front End Developer",
+      "technos": "React, Flux, Sass, Pixi.js, Canvas, Gulp, Jira, Git, Continuous Integration",
+      "jobDescription": "I participated actively in the development of a modular React/Flux architecture in order to facilitate and streamline the production of over 150 marketing promotions each month. A promotion would take from 2 hours to one week of development, depending on the complexity.",
+      "jobEnvironment": "Very fast paced environment, with little room for error, as the whole process for a promotion, from conception to publication (via scripting, illustration, development and testing) took a matter of hours or days."
+    },
+    {
+      "date": "Jun 2015 - Dec 2015",
+      "client": "Moneypenny",
+      "clientDescription": "Premier provider of outsourced switchboards and personal assistants in the UK",
+      "location": "Wrexham, UK",
+      "projectTitle": "App development and marketing content",
+      "projectDescription": "Development of the Clever Numbers suite for the core activity of Moneypenny, allowing clients to manage their telephone numbers and routing. Livechat software development",
+      "jobTitle": "Lead Front End Developer",
+      "technos": "AngularJS, Vanilla Javascript, Ionic, Jira, Team Foundation Server, .NET, Continuous Integration",
+      "jobDescription": "I participated in the Clever Numbers project, producing a responsive mobile/desktop website and a native Android app. I also managed the handover period for and the continued development of outsourced livechat software developed in Angular.",
+      "jobEnvironment": "A small team using agile practices and continuous integration workin on a number of different projects."
+    },
+    {
+      "date": "Mar 2015 - May 2015",
+      "client": "The Sun, News UK",
+      "clientDescription": "Daily UK newspaper with the largest circulation",
+      "location": "London, UK",
+      "projectTitle": "Sunnation Election Website",
+      "projectDescription": "A lighthearted take on the UK elections and politics in general, with articles, games and quizzes quizzes",
+      "jobTitle": "Senior Front End Developer",
+      "technos": "AngularJS, CSS/animation, Canvas (CreateJS and PhaserJS)",
+      "jobDescription": "Production of quizzes based on a pre-designed development template, games, including a button mashing drinking game, and a meme generator, with results shared on social media",
+      "jobEnvironment": "A very short development lifecycle ranging from 2 hours for a quiz to 4/5 days for games and apps"
+    }
+  ]
+}
