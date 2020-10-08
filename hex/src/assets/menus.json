@@ -1,15 +1,15 @@
 {
     "menu_0": [
-        "<div class='centre-hex-0'><div class='fed-letter'>FRONT</div><div class='fed-letter'>END</div><div class='fed-letter'>DEV</div></div>",
-        "<div class='large-letter'>F</div>",
-        "<div class='large-letter'>E</div>",
+        "<div class='centre-hex-0'><div>WEB</div><div class='letter letter-and'>&</div><div>APP</div></div>",
         "<div class='large-letter'>D</div>",
+        "<div class='large-letter'>E</div>",
+        "<div class='large-letter'>V</div>",
         "<div class='large-letter'>X</div>",
         "<div class='large-letter'>O</div>",
         "<div class='large-letter'>B</div>"
     ],
     "menu_1": [
-        "<div class='centre-hex-1'><div class='fed-letter'>FED</div><div class='fed-letter'>BOX</div></div>",
+        "<div class='centre-hex-1'><div><span class='letter'>D</span>EV</div><div>BO<span class='letter'>X</span></div></div>",
         "<div class='menu-theme'>WHO</div>",
         "<div class='menu-theme'>WHAT</div>",
         "<div class='menu-theme'>WHEN</div>",

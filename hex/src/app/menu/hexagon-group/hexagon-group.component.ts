@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 import { ControlsService } from '../../services/controls.service';
-import { Router } from '@angular/router';
+import { Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
 import { Location } from '@angular/common';
-import { DataService} from '../../services/data.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'hexagon-group',
@@ -16,7 +16,7 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
 
   private route: string;
 
-  constructor(private dataService: DataService, private router: Router, private location: Location,private controlsService: ControlsService) {
+  constructor(private dataService: DataService, private router: Router, private location: Location, private controlsService: ControlsService) {
     // router.events.subscribe((val) => {
     //   if (location.path() != '') {
     //     if (this.route !== location.path()) {
@@ -30,6 +30,28 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
     //     }
     //   }
     // });
+
+    this.router.events
+      .subscribe(
+        (event: NavigationEvent) => {
+          if (event instanceof NavigationStart) {
+            console.log("location.path", location);
+            console.log("event.url", event.url);
+            if (event.url != '') {
+              if (this.route !== event.url) {
+                this.route = event.url;
+                this.updateAfterBackForward();
+              }
+            } else {
+              if (this.route !== '/') {
+                this.route = '/';
+                this.updateAfterBackForward();
+              }
+            }
+          }
+        });
+
+
   }
 
   public menuContent: Array<any>;
@@ -43,7 +65,6 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
   private onIntro: boolean;
 
   ngOnInit() {
-    console.log("INIT");
 
     this.getMenus();
 
@@ -70,7 +91,6 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log("ngAfterViewInit ngAfterViewInit");
     // Remember that 1 to 6 were inverted for the start animation. Order is 0,6,5,4,3,2,1
     this.hexagons = this.menuRotate.nativeElement.getElementsByClassName('hexagon-content-holder');
   }
@@ -101,11 +121,13 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
       // After pause, open menu with new button content
       this.setUpMenu(1); // Change menu content. To do : refactor and clean up
       this.hexOpened = [true, true, true, true, true, true];
+      // Initialise what page as landing page
+      this.changePage("/what");
     }, 1000);
   }
 
   clickHexagon(hexIndex, location) {
-    if(this.onIntro) return;
+    if (this.onIntro) return;
     this.manageMenu(hexIndex);
     this.changePage(location)
   }
@@ -141,13 +163,15 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
   }
 
   rotateMenu() {
-    console.log("rotateMenu this.menuRotation",this.menuRotation);
-    this.menuRotate.nativeElement.style.transform = "rotate(" + this.menuRotation + "deg)"
-    this.hexagonContentRotate();
+    console.log("rotateMenu this.menuRotation", this.menuRotation);
+    if (this.menuRotate) {
+      this.menuRotate.nativeElement.style.transform = "rotate(" + this.menuRotation + "deg)"
+      this.hexagonContentRotate();
+    }
   }
 
   hexagonContentRotate() {
-    // Keeps the contents ofhexagons horizontal, as the menu turns.
+    // Keeps the contents of hexagons horizontal, as the menu turns.
     // Remember that 1 to 6 were inverted for the start animation. Order is 0,6,5,4,3,2,1
     this.hexagons[0].style.transform = "rotate(" + (this.menuRotation * -1) + "deg)";
     this.hexagons[1].style.transform = "rotate(" + (this.menuRotation + 240) + "deg)";
@@ -163,12 +187,12 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
   }
 
   overHexagon(index) {
-    if(this.onIntro) return;
+    if (this.onIntro) return;
     this.rolled = index;
   }
 
   leaveHexagon(index) {
-    if(this.onIntro) return;
+    if (this.onIntro) return;
     this.rolled = null;
   }
 
@@ -181,13 +205,15 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
   }
 
   updateMenu() {
-      this.controlsService.manageButtonSliders(false);
+    // this.controlsService.manageButtonSliders(false);
+    console.log("this.route", this.route);
     switch (this.route) {
       case "/":
+        this.rotateMenu();
         this.selected = null;
+        console.log("this.selected", this.selected);
         this.lastSelected = 2;
         this.menuRotation = 0;
-        this.rotateMenu();
         break;
       case "/who":
         this.manageMenu(1);
@@ -196,7 +222,7 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
         this.manageMenu(2);
         break;
       case "/when":
-        this.controlsService.manageButtonSliders(true);
+        // this.controlsService.manageButtonSliders(true);
         this.manageMenu(3);
         break;
       case "/why":

@@ -8,6 +8,7 @@ import { HowComponent } from './content/main-sections/how/how/how.component';
 import { WhyComponent } from './content/main-sections/why/why/why.component';
 
 const routes: Routes = [
+  // { path: '',   redirectTo: '/what', pathMatch: 'full' },
   { path: 'who', component: WhoComponent },
   { path: 'what', component: WhatComponent },
   { path: 'when', component: WhenComponent },
