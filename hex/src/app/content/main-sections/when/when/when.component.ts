@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService} from '../../../../services/data.service';
+import { ControlsService } from '../../../../services/controls.service';
 
 @Component({
   selector: 'app-when',
@@ -8,10 +9,10 @@ import { DataService} from '../../../../services/data.service';
 })
 export class WhenComponent implements OnInit {
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private controlsService: ControlsService) { }
 
   private whenData: Object;
-  public timelineElements: Object;
+  public timelineYears: Object;
 
   ngOnInit() {
     this.getWhenData();
@@ -25,10 +26,16 @@ export class WhenComponent implements OnInit {
     );
   }
 
+  openScroller() {
+    this.controlsService.manageScroller(true);
+  }
+
   setUpTimeline(menu) {
-    var timelineElements = this.whenData["timeline-elements"];
-    timelineElements.reverse();
-    this.timelineElements = timelineElements;
+    var timelineYears = this.whenData["timeline-years"];
+    timelineYears.reverse();
+    this.timelineYears = timelineYears;
+    console.log("this.timelineYears", this.timelineYears);
+    this.openScroller();
   }
 
 }

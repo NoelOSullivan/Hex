@@ -17,26 +17,10 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
   private route: string;
 
   constructor(private dataService: DataService, private router: Router, private location: Location, private controlsService: ControlsService) {
-    // router.events.subscribe((val) => {
-    //   if (location.path() != '') {
-    //     if (this.route !== location.path()) {
-    //       this.route = location.path();
-    //       this.updateAfterBackForward();
-    //     }
-    //   } else {
-    //     if (this.route !== '/') {
-    //       this.route = '/';
-    //       this.updateAfterBackForward();
-    //     }
-    //   }
-    // });
-
     this.router.events
       .subscribe(
         (event: NavigationEvent) => {
           if (event instanceof NavigationStart) {
-            console.log("location.path", location);
-            console.log("event.url", event.url);
             if (event.url != '') {
               if (this.route !== event.url) {
                 this.route = event.url;
@@ -50,8 +34,6 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
             }
           }
         });
-
-
   }
 
   public menuContent: Array<any>;
@@ -63,6 +45,7 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
   public rolled: number;
   private hexagons: Array<any>;
   private onIntro: boolean;
+  private menuAnimationFinished: boolean;
 
   ngOnInit() {
 
@@ -75,6 +58,8 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
     this.lastSelected = 2;
     this.menuRotation = 0;
 
+    this.menuAnimationFinished = false;
+
     this.changePage("/");
 
     for (let i = 0; i < 6; i++) {
@@ -85,7 +70,7 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.onIntro = false;
       this.changeMenu();
-    }, 5000);
+    }, 5000); //5000
 
 
   }
@@ -159,11 +144,9 @@ export class HexagonGroupComponent implements OnInit, AfterViewInit {
       }
       this.selected = hexIndex;
     }
-
   }
 
   rotateMenu() {
-    console.log("rotateMenu this.menuRotation", this.menuRotation);
     if (this.menuRotate) {
       this.menuRotate.nativeElement.style.transform = "rotate(" + this.menuRotation + "deg)"
       this.hexagonContentRotate();

@@ -9,12 +9,12 @@
         "<div class='large-letter'>B</div>"
     ],
     "menu_1": [
-        "<div class='centre-hex-1'><div><span class='letter'>D</span>EV</div><div>BO<span class='letter'>X</span></div></div>",
+        "<div class='centre-hex-1'><div id='menuMagic' class='menu-magic'></div><div #topHalf class='top-half'><div><span class='letter'>D</span>EV</div></div><div #bottomHalf class='bottom-half'><div>BO<span class='letter'>X</span></div></div></div>",
         "<div class='menu-theme'>WHO</div>",
         "<div class='menu-theme'>WHAT</div>",
         "<div class='menu-theme'>WHEN</div>",
         "<div class='menu-theme'>WHY</div>",
         "<div class='menu-theme'>HOW</div>",
-        "<div class='menu-theme'>WHERE<re</div>"
+        "<div class='menu-theme'>WHERE</div>"
     ]
 }

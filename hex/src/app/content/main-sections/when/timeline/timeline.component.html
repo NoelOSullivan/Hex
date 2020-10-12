@@ -1,6 +1,25 @@
-<div class='timeline-holder'>
-    TIMELINE
-    <div #timelineScroller class="timeline-scroller" [ngClass]="{'timeline-scroller-no-animate':!animateTimeline}">
+<div class='timeline-holder' (panstart)="onPanStart($event)" (panmove)="onPanMove($event)" (panend)="onPanEnd($event)"
+  (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)">
+  <div #timelineScroller class="timeline-scroller" [ngClass]="{'unanimate-timeline-scroller':!animateScroller}">
+    <div class="timeline-years">
+      <div class="timeline-year-holder" *ngFor="let year of timelineYears; let i = index">
+        <div class="year">{{year.year}}</div>
+
+
+        <!-- <div class='date'>{{element.date}}</div>
+                <div class='client'>{{element.client}}</div>
+                <div class='location'>{{element.location}}</div>
+                <div class='projectTitle'>{{element.projectTitle}}</div>
+                <div class='project-description'>{{element.projectDescription}}</div>
+                <div class='job-title'>{{element.jobTitle}}</div>
+                <div class='technos'>{{element.technos}}</div>
+                <div class='job-description'>{{element.jobDescription}}</div>
+                <div class='job-environment'>{{element.jobDescription}}</div> -->
+      </div>
+
+    </div>
+  </div>
+  <!-- <div #timelineScroller class="timeline-scroller" [ngClass]="{'timeline-scroller-no-animate':!animateTimeline}">
         <div #timelineElement class="timeline-element" *ngFor="let element of timelineElements; let i = index">
             <div class='date'>{{element.date}}</div>
             <div class='client'>{{element.client}}</div>
@@ -12,5 +31,5 @@
             <div class='job-description'>{{element.jobDescription}}</div>
             <div class='job-environment'>{{element.jobDescription}}</div>
         </div>
-    </div>
+    </div> -->
 </div>

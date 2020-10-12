@@ -271,6 +271,8 @@
   //transition: opacity 1000ms ease-in-out;
 }
 
+.override-hexagon-content-holder {}
+
 .hexagon-content-holder-rolled {
   color: white;
 }
@@ -308,13 +310,13 @@
 }
 
 :host ::ng-deep .letter-and {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    font-weight: 900;
-    opacity: 0.5;
-    padding-left: 5px;
-    margin-top: -3px;
-  }
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  opacity: 0.5;
+  padding-left: 5px;
+  margin-top: -3px;
+}
 
 :host ::ng-deep .menu-theme {
   position: absolute;
@@ -365,11 +367,38 @@
   line-height: 26px;
   text-shadow: none;
 
-  //@media only screen and (max-width: 500px) {     
+  //@media only screen and (max-width: 500px) {  
+  height: 54px;
   width: 60px;
   left: 0px;
-  top: 10px;
+  // top: 10px;
   font-size: 21px;
   line-height: 17px;
-  //}
+  overflow: hidden;
+
+  .menu-magic {
+    background: black;
+    width: 60px;
+    height: 52px;
+    visibility: hidden;
+  }
+
+  .top-half {
+    position: absolute;
+    padding-top: 9px;
+    width: 60px;
+    height: 26px;
+    box-sizing: border-box;
+    top: 0px;
+    transition: top 1s ease-out;
+  }
+
+  .bottom-half {
+    position: absolute;
+    width: 60px;
+    top: 25px;
+    height: 26px;
+    transition: top 1s ease-out;
+    // background: rgb(255,219,153);
+  }
 }

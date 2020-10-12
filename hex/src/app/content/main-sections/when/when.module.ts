@@ -2,16 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WhenComponent} from './when/when.component';
 import { TimelineComponent} from "./timeline/timeline.component";
+import { ManetteComponent } from '../../../components/manette/manette.component';
  
 @NgModule({
   imports: [
     CommonModule],
   declarations: [
     WhenComponent,
-    TimelineComponent],
+    TimelineComponent,
+    ManetteComponent],
   exports : [
     WhenComponent,
-    TimelineComponent
+    TimelineComponent,
+    ManetteComponent
   ]
 })
 export class WhenModule { }

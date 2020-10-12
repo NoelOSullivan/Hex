@@ -2,7 +2,7 @@
 
 .timeline-holder {
     position: relative;
-    width: calc(100vw - 10px) ;
+    width: calc(100vw - 20px) ;
     height: calc(100vh - 214px);
     //border: 1px solid black;
     box-sizing: border-box;
@@ -15,17 +15,75 @@
     position: absolute;
     //width: auto;
     //left: calc(-300% - 30px);
-    left: 0;
-    top: 0;
-    height: inherit;
+    height: 100px;
+    right: 0;
+    top: 300px;
     box-sizing: border-box;
     display: flex;
-    transition: left 250ms ease-in-out;
+    background: lightgray;
+    overflow: hidden;
+    transition: right 500ms ease-out;
 }
+
+.unanimate-timeline-scroller {
+    transition: none;
+}
+
+
 
 .timeline-scroller-no-animate {
     transition: none;
 }
+
+//---------------
+
+.timeline-years {
+    display: flex;
+    flex-direction: row;
+    background: rgb(113, 192, 238);
+    height: 30px;
+}
+
+.timeline-year-holder {
+    display: flex;
+    flex-direction: row;
+    min-width: 500px;
+    height: 30px;
+    background: lightpink;
+    border: 1px solid black;
+}
+
+.year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .timeline-element {
     border: 1px $primary-hover-color solid;

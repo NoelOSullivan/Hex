@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HammerModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MenuModule } from './menu/menu.module';
@@ -18,6 +19,7 @@ import { ContentModule } from './content/content.module';
     BrowserModule,
     HttpClientModule ,
     AppRoutingModule,
+    HammerModule,
     MenuModule,
     ControlsModule,
     ContentModule,

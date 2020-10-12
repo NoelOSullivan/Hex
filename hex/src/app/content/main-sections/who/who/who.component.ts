@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ControlsService } from '../../../../services/controls.service';
 
 @Component({
   selector: 'who',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private controlsService:ControlsService) { }
 
   ngOnInit() {
+    this.controlsService.manageScroller(false);
   }
 
 }
